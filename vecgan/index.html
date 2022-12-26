@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description"
+        content="VecGAN aims to perform semnatic edits on face images, using disentangled latent vectors.">
+        <meta name="keywords" content="Image translation, generative adversarial networks, latent space
+        manipulation, face attribute editing">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>VecGAN</title>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+        dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+        </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="navbar-menu">
+              <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://keunhong.com">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span>
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More Projects
+                  </a>
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://github.com/hamzapehlivan/StyleRes">
+                      StyleRes
+                    </a>
+                </div>
+            </div>
+          </div>
+      
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">Face Attribute Editing with Disentangled Latent Vectors</h1>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <a href="https://yusufdalva.github.io/">Yusuf Dalva</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://github.com/hamzapehlivan">Hamza Pehlivan</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/oyku-irmak-hatipoglu/">Öykü Irmak Hatipoğlu</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/cansu-moran/">Cansu Moran</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="http://www.cs.bilkent.edu.tr/~adundar/">Ayşegül Dündar</a><sup>1</sup>,
+                  </span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>Bilkent University</span>
+                </div>
+      
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
+                    <span class="link-block">
+                      <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/3685_ECCV_2022_paper.php"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>VecGAN</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2207.03411"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>VecGAN++</span>
+                      </a>
+                    </span>
+                    <!-- Video Link. -->
+                    <span class="link-block">
+                      <a href="https://www.youtube.com/watch?v=-UPZ_E4Q0w4&t=31s"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <span>Video</span>
+                      </a>
+                    </span>
+                    <!-- Code Link. -->
+                    <span class="link-block">
+                      <a href="https://github.com/yusufdalva/VecGAN_release"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                    </span>
+                    <!-- Dataset Link. -->
+                    <!-- <span class="link-block">
+                      <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="far fa-images"></i>
+                        </span>
+                        <span>Data</span>
+                        </a> -->
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <!--
+            <center>
+                <iframe width="560" height="315" heightdisplay="block" src="https://www.youtube.com/embed/-UPZ_E4Q0w4" title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+            </center> -->
+            <h2 class="subtitle has-text-centered">
+              <span class="dnerf">VecGAN</span> performs disentangled semantic edits while preserving background details
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Abstract</h2>
+              <div class="content has-text-justified">
+              <p>
+                We propose an image-to-image translation framework for facial attribute editing with disentangled interpretable latent directions.
+              </p>
+              <p>
+                Facial attribute editing task faces the challenges of targeted attribute editing with controllable strength and  disentanglement 
+                in the representations of attributes to preserve the other attributes during edits. For this goal, inspired by the latent space 
+                factorization works of fixed pretrained GANs,  we design the attribute editing by latent space factorization, and for each attribute, 
+                we learn a linear direction that is orthogonal to the others.
+              </p>
+              <p>
+                To project images to semantically organized latent spaces, we set an encoder-decoder architecture with attention-based skip connections.
+                We extensively compare with previous image translation algorithms and editing with pretrained GAN works. Our extensive experiments show 
+                that our method significantly improves over the state-of-the-arts.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+      
+        
+        <!-- Method -->
+        <section class="section">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-12">
+                <h2 class="title is-3">Method</h2>
+      
+                <div class="content has-text-justified">
+                  <!--
+                  <p>
+                   Explain method
+                  </p>
+                -->
+                  <div class="container">
+                    <img src="./static/images/Architecture.jpg" />
+                    <br />
+                  </div>
+      
+                  <p>
+                    VecGAN++ edits images using a encoder-decoder architecture, relying on learned disentangled latent directions. We encode 
+                    images with an Encoder to a latent representation from which we change a selected tag (i), e.g. hair color with a learnable 
+                    direction A<sub>i</sub> and a scale <span>&#593;</span>. To calculate the scale, we subtract the target style scale from the source style.
+                    This operation corresponds to removing an attribute and adding an attribute.
+                    To remove the image's attribute, the source style is encoded and projected from the source image.
+                    To add the target attribute, the target style scale is sampled from a distribution mapped for the given attribute (j), 
+                    e.g. black, blonde, or encoded and projected from a reference image.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+           <!--/ Method -->
+      
+          <!-- Paper video. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Video for VecGAN - ECCV 2022</h2>
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/-UPZ_E4Q0w4"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <!--/ Paper video. -->
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">      
+              <div class="content">
+
+                <div class="content has-text-justified">
+                <h4 class="title is-3">Interpolation Results</h4>
+                <p>
+                  <i>VecGAN++</i> can interpolate through attribute edits through changing the translation strength for the desired semantic. 
+                  Our model can edit smile, bangs, eyeglasses, hair color, age and gender tags where interpolation results are given below.
+                </p>
+                </div>
+                <table  style="font-size:80%;">
+                  <tr>
+                    <td><img src="static/edits/input/1171.jpg" width=100 \></td>
+                    <td><img src="./static/edits/smile/1171.gif" width=100 \></td>
+                    <td><img src="./static/edits/bangs/1171.gif" width=100 \></td>
+                    <td><img src="./static/edits/eyeglasses/1171.gif" width=100 \></td>
+                    <td><img src="./static/edits/hair/1171.gif" width=100 \></td>
+                    <td><img src="./static/edits/age/1171.gif" width=100 \></td>
+                    <td><img src="./static/edits/gender/1171.gif" width=100 \></td>
+                <tr>
+                    <td><img src="static/edits/input/9057.jpg" width=100 \></td>
+                    <td><img src="./static/edits/smile/9057.gif" width=100 \></td>
+                    <td><img src="./static/edits/bangs/9057.gif" width=100 \></td>
+                    <td><img src="./static/edits/eyeglasses/9057.gif" width=100 \></td>
+                    <td><img src="./static/edits/hair/9057.gif" width=100 \></td>
+                    <td><img src="./static/edits/age/9057.gif" width=100 \></td>
+                    <td><img src="./static/edits/gender/9057.gif" width=100 \></td>
+                <tr>
+                    <td><img src="static/edits/input/27983.jpg" width=100 \></td>
+                    <td><img src="./static/edits/smile/27983.gif" width=100 \></td>
+                    <td><img src="./static/edits/bangs/27983.gif" width=100 \></td>
+                    <td><img src="./static/edits/eyeglasses/27983.gif" width=100 \></td>
+                    <td><img src="./static/edits/hair/27983.gif" width=100 \></td>
+                    <td><img src="./static/edits/age/27983.gif" width=100 \></td>
+                    <td><img src="./static/edits/gender/27983.gif" width=100 \></td>
+                    <tr>
+                    <td><p>Input</p></td>
+                    <td><p>Smile</p></td>
+                    <td><p>Bangs</p></td>
+                    <td><p>Eyeglasses</p></td>
+                    <td><p>Hair</p></td>
+                    <td><p>Age</p></td>
+                    <td><p>Gender</p></td>
+                  </table>
+
+                  <div class="content has-text-justified">
+                  <h4 class="title is-3">Generalization Results</h4>
+                  <p>
+                  <i>VecGAN++</i> also generalizes well to out-of-domain images. Smile interpolation results are provided, using samples from MetFaces dataset.
+                  </p>
+                </div>
+                <table  style="font-size:80%;">
+                  <tr>
+                    <td><img src="static/edits/input/10516-00.png" width=100 \></td>
+                    <td><img src="./static/edits/input/10784-00.png" width=100 \></td>
+                    <td><img src="./static/edits/input/187997-00.png" width=100 \></td>
+                  <tr>
+                    <td><img src="static/edits/smile/10516-00.gif" width=100 \></td>
+                    <td><img src="./static/edits/smile/10784-00.gif" width=100 \></td>
+                    <td><img src="./static/edits/smile/187997-00.gif" width=100 \></td>
+                  </table>
+              </div>
+          </div>
+
+          <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+              <h2 class="title">BibTeX</h2>
+              <pre><code>@inproceedings{dalva2022vecgan,
+    title={VecGAN: Image-to-Image Translation with Interpretable Latent Directions},
+    author={Dalva, Yusuf and Alt{\i}ndi{\c{s}}, Said Fahri and Dundar, Aysegul},
+    booktitle={European Conference on Computer Vision},
+    pages={153--169},
+    year={2022},
+    organization={Springer}
+    }
+              </code></pre>
+            </div>
+          </section>
+          
+          <footer class="footer">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-8">
+                  <div class="content has-text-justified">
+                    <!-- <p>
+                      This website is licensed under a <a rel="license"
+                                                          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                      Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p> -->
+                    <p>This page is adapted from <a
+                        href="https://github.com/nerfies/nerfies.github.io">this</a> implementation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    </body>
+</html>
