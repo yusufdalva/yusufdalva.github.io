@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -48,12 +47,12 @@
             </div>
             <div class="navbar-menu">
               <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-                <a class="navbar-item" href="https://keunhong.com">
+                <a class="navbar-item" href="https://yusufdalva.github.io">
                 <span class="icon">
                     <i class="fas fa-home"></i>
                 </span>
                 </a>
-          
+                <!--
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
                     More Projects
@@ -63,6 +62,7 @@
                       StyleRes
                     </a>
                 </div>
+              -->
             </div>
           </div>
       
@@ -77,15 +77,15 @@
                 <h1 class="title is-1 publication-title">Face Attribute Editing with Disentangled Latent Vectors</h1>
                 <div class="is-size-5 publication-authors">
                   <span class="author-block">
-                    <a href="https://yusufdalva.github.io/">Yusuf Dalva</a><sup>1</sup>,</span>
+                    <a href="https://yusufdalva.github.io/">Yusuf Dalva</a>,</span>
                   <span class="author-block">
-                    <a href="https://github.com/hamzapehlivan">Hamza Pehlivan</a><sup>1</sup>,</span>
+                    <a href="https://github.com/hamzapehlivan">Hamza Pehlivan</a>,</span>
                   <span class="author-block">
-                    <a href="https://www.linkedin.com/in/oyku-irmak-hatipoglu/">Öykü Irmak Hatipoğlu</a><sup>1</sup>,</span>
+                    <a href="https://www.linkedin.com/in/oyku-irmak-hatipoglu/">Öykü Irmak Hatipoğlu</a>,</span>
                   <span class="author-block">
-                    <a href="https://www.linkedin.com/in/cansu-moran/">Cansu Moran</a><sup>1</sup>,</span>
+                    <a href="https://www.linkedin.com/in/cansu-moran/">Cansu Moran</a>,</span>
                   <span class="author-block">
-                    <a href="http://www.cs.bilkent.edu.tr/~adundar/">Ayşegül Dündar</a><sup>1</sup>,
+                    <a href="http://www.cs.bilkent.edu.tr/~adundar/">Ayşegül Dündar</a>,
                   </span>
                 </div>
       
@@ -126,7 +126,7 @@
                     </span>
                     <!-- Code Link. -->
                     <span class="link-block">
-                      <a href="https://github.com/yusufdalva/VecGAN_release"
+                      <a href="https://github.com/yusufdalva/VecGAN"
                          class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                             <i class="fab fa-github"></i>
@@ -155,14 +155,10 @@
       <section class="hero teaser">
         <div class="container is-max-desktop">
           <div class="hero-body">
-            <!--
-            <center>
-                <iframe width="560" height="315" heightdisplay="block" src="https://www.youtube.com/embed/-UPZ_E4Q0w4" title="YouTube video player" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-            </center> -->
             <h2 class="subtitle has-text-centered">
-              <span class="dnerf">VecGAN</span> performs disentangled semantic edits while preserving background details
+              <span class="dnerf">VecGAN</span> performs disentangled semantic edits while preserving image details. 
+              VecGAN is presented in ECCV 2022. We additionally propose <span class="dnerf">VecGAN++</span> with additional 
+              improvements and analysis. This page hosts both works.
             </h2>
           </div>
         </div>
@@ -214,13 +210,14 @@
                   </div>
       
                   <p>
-                    VecGAN++ edits images using a encoder-decoder architecture, relying on learned disentangled latent directions. We encode 
+
+                    VecGAN edits images using an encoder-decoder architecture, relying on learned disentangled latent directions. We encode 
                     images with an Encoder to a latent representation from which we change a selected tag (i), e.g. hair color with a learnable 
-                    direction A<sub>i</sub> and a scale <span>&#593;</span>. To calculate the scale, we subtract the target style scale from the source style.
-                    This operation corresponds to removing an attribute and adding an attribute.
-                    To remove the image's attribute, the source style is encoded and projected from the source image.
-                    To add the target attribute, the target style scale is sampled from a distribution mapped for the given attribute (j), 
-                    e.g. black, blonde, or encoded and projected from a reference image.
+                    direction A<sub>i</sub> and a scale <span>&#593;</span>. To calculate the scale, we subtract the target style scale from the source style. 
+                    This operation corresponds to removing an attribute and adding an attribute. To remove the image's attribute, the source style is encoded 
+                    and projected from the source image. To add the target attribute, the target style scale is sampled from a distribution mapped 
+                    for the given attribute (j), e.g. black, blonde, or encoded and projected from a reference image. In VecGAN++, we additionally 
+                    introduce an attention based skip connection to bridge flow of selected information from the encoder to decoder. 
                   </p>
                 </div>
               </div>
@@ -239,9 +236,9 @@
               </div>
             </div>
           </div>
-          <!--/ Paper video. -->
         </div>
       </section>
+
 
       <section class="section">
         <div class="container is-max-desktop">
@@ -308,6 +305,7 @@
                   </table>
               </div>
           </div>
+        </section>
 
           <section class="section" id="BibTeX">
             <div class="container is-max-desktop content">
@@ -326,7 +324,12 @@
           
           <footer class="footer">
             <div class="container">
-              <div class="columns is-centered">
+              <div class="content has-text-centered is-centered">
+                <a class="icon-link" href="https://github.com/yusufdalva" class="external-link" disabled>
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+              <div class="columns">
                 <div class="column is-8">
                   <div class="content has-text-justified">
                     <!-- <p>
