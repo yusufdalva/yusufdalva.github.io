@@ -131,6 +131,6 @@ span.highlight {
 }
 
 #profile-photo {
-  border-radius: 50%;
-  border: 2px solid black;
+  border-radius: 5%;
+  border: 3px solid black;
 }
