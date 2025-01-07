@@ -1,4 +1,0 @@
-Yusuf Dalva is a Ph.D. student at the Department of Computer Science at Virginia Tech. 
-He recieved his Bachelors degree at 2020 and M.Sc. degree at 2023, from Bilkent University, Ankara, Turkey.
-His research interestsinvolve the intersection of computer vision and machine learning, with an emphasis on generative models.
-Until today, his previous research involves robustness enhancement of deep neural networks, image-to-image translation models, inversion of pre-trained GANs and 3D texture estimation.
