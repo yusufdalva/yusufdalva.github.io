@@ -4,59 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusuf Dalva</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c25ff6320f.js" crossorigin="anonymous"></script>
-    <script src="https://www.w3counter.com/tracker.js?id=150225"></script>
+    <!-- <script src="https://www.w3counter.com/tracker.js?id=150225"></script> -->
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+    <script>
+        (function () {
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = stored || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html" class="disabled">Home</a>
-        <a href="publications.html">Publications</a>
-      </div>
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-links">
+                <a href="index.html" class="disabled">Home</a>
+                <a href="publications.html">Publications</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon icon-moon"></i>
+                <i class="fa-solid fa-sun icon-sun"></i>
+            </button>
+        </div>
+    </nav>
 
+    <div class="hero-wrap">
     <header>
-        <img src="images/bio/profile.jpg" alt="Yusuf Dalva">
+        <div class="avatar-frame"><img src="images/bio/profile.jpg" alt="Yusuf Dalva"></div>
         <div class="header-content">
             <h1>Yusuf Dalva</h1>
-            <p>Ph.D. Student @ Virginia Tech</p>
+            <p class="role">Ph.D. Candidate <span class="affil">@ Virginia Tech</span> · Generative AI & Computer Vision</p>
             <div class="header-links">
                 <a href="https://scholar.google.com/citations?user=SLtSdMAAAAAJ" target="_blank">
-                    <i class="fa-brands fa-google-scholar"></i> &nbsp <u>Google Scholar</u>
+                    <i class="fa-brands fa-google-scholar"></i> Google Scholar
                 </a>
                 <a href="https://www.linkedin.com/in/yusuf-dalva/" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i> &nbsp <u>LinkedIn</u>
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
                 <a href="mailto:ydalva@vt.edu">
-                    <i class="fa-solid fa-envelope"></i> &nbsp <u>Email</u>
+                    <i class="fa-solid fa-envelope"></i> Email
                 </a>
                 <a href="https://github.com/yusufdalva" target="_blank">
-                    <i class="fa-brands fa-github"></i> &nbsp <u>GitHub</u>
+                    <i class="fa-brands fa-github"></i> GitHub
                 </a>
                 <a href="docs/Yusuf_Dalva_Resume.pdf" target="_blank">
-                    <i class="fa-solid fa-file"> </i> &nbsp; <u>Resume</u>
+                    <i class="fa-solid fa-file-lines"></i> Resume
                 </a>
             </div>
         </div>
     </header>
+    </div>
 
     <main>
         <section id="about">
-            <h2><i class="fa-solid fa-user"></i> &nbsp About Me</h2>
-            <p>I am a Ph.D. student at Virginia Tech, Blacksburg, where I am affiliated with <a href="https://sanghani.cs.vt.edu/person/yusuf-dalva/">Sanghani Center for Artificial Intelligence and Data Analytics</a>. 
-                I am working on making generative models more controllable and customizable to further enhance control over them. Before joining Virginia Tech, 
-                I obtained my M.Sc. & B.Sc. degree from Deprtament of Computer Engineering at Bilkent University (<a href="docs/Yusuf_Dalva_Thesis.pdf" target="_blank">M.Sc. Thesis</a>).
-            </p>
+            <h2><i class="fa-solid fa-user"></i> About</h2>
+            <p>I am a Ph.D. candidate (4th year) at Virginia Tech, Blacksburg, where I am affiliated with the <a href="https://sanghani.cs.vt.edu/person/yusuf-dalva/">Sanghani Center for Artificial Intelligence and Data Analytics</a>. I work on making generative models more controllable and customizable to enhance fine-grained control over them. Before joining Virginia Tech, I obtained my M.Sc. & B.Sc. degrees from the Department of Computer Engineering at Bilkent University (<a href="docs/Yusuf_Dalva_Thesis.pdf" target="_blank">M.Sc. Thesis</a>).</p>
+            <p>At Virginia Tech, I am working on the controllability of generative models under the supervision of <a href="http://pinguar.org">Pinar Yanardag</a>. In the past, I have been fortunate to work with <a href="http://www.cs.bilkent.edu.tr/~adundar/">Aysegul Dundar</a> at Bilkent University, <a href="https://yijunmaverick.github.io/">Yijun Li</a> at Adobe Research, <a href="https://kfiraberman.github.io/">Kfir Aberman</a> and <a href="https://wangkua1.github.io/">Kuan-Chieh Jackson Wang</a> at Snap Research, and I am currently a Research Intern at Google Research with <a href="https://mdelbra.github.io/">Mauricio Delbracio</a>.</p>
+        </section>
 
-            <p>
-                At Virginia Tech, I am currently working on the controllability aspect of generative models under the supervison of <a href="http://pinguar.org">Pinar Yanardag</a>. In the past, I have been fortunate to work 
-                with <a href="http://www.cs.bilkent.edu.tr/~adundar/">Aysegul Dundar</a> at Bilkent University, <a href="https://yijunmaverick.github.io/">Yijun Li</a> at Adobe Research, and <a href="https://kfiraberman.github.io/">Kfir Aberman</a> and <a href="https://wangkua1.github.io/">Kuan-Chieh Jackson Wang</a> at Snap Research.
-            </p>
+        <section id="news">
+            <h2><i class="fa-solid fa-newspaper"></i> News &amp; Updates</h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-date">May 2026</div>
+                    <p class="news-text">Joined <strong>Google Research</strong> as a Research Intern, working on efficient image tokenization for generative models.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Apr 2026</div>
+                    <p class="news-text"><strong>Canvas-to-Image</strong> got accepted to SIGGRAPH 2026.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Mar 2026</div>
+                    <p class="news-text"><strong>LayerFusion</strong> got accepted to CVPR 2026 Findings.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Sep 2025</div>
+                    <p class="news-text"><a href="https://lorashop.github.io/">LoRAShop</a> got accepted to NeurIPS 2025 as a <strong>Spotlight</strong> (top 3%).</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">May 2025</div>
+                    <p class="news-text">Joined <strong>Snap Research</strong> as a Research Intern, working on multi-subject diffusion frameworks.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">May 2025</div>
+                    <p class="news-text">Awarded the <strong>Amazon Fellowship</strong> as part of the Amazon – Virginia Tech Initiative in Efficient and Robust Machine Learning.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Feb 2025</div>
+                    <p class="news-text"><a href="https://fluxspace.github.io/">FluxSpace</a> got accepted to CVPR 2025.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Dec 2024</div>
+                    <p class="news-text"><a href="https://fluxspace.github.io/">FluxSpace</a> and <a href="https://context-canvas.github.io/">Context Canvas</a> now available on arXiv.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">May 2024</div>
+                    <p class="news-text">Joined <strong>Adobe Research</strong> as a Research Scientist Intern.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Feb 2024</div>
+                    <p class="news-text"><a href="https://noiseclr.github.io/">NoiseCLR</a> got accepted to CVPR 2024 for an <strong>Oral</strong> presentation (top 0.8%).</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Sep 2023</div>
+                    <p class="news-text">My M.Sc. thesis won the <a href="https://w3.cs.bilkent.edu.tr/tr/haberler/ieee-bilgisayar-toplulugu-turkiye-yuksek-lisans-tez-yarismasinda-birincilik/"><strong>Best Master Thesis Award</strong></a> from IEEE CS Turkey Chapter.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">Aug 2023</div>
+                    <p class="news-text">Started my Ph.D. at Virginia Tech.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2><i class="fa-solid fa-briefcase"></i> Industry Experience</h2>
+            <div class="exp-grid">
+                <div class="exp-card" style="--brand:#4285F4; --brand-shadow:rgba(66,133,244,0.35);">
+                    <div class="exp-logo">
+                        <img src="https://cdn.simpleicons.org/google/FFFFFF" alt="Google logo">
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <span class="exp-role">Research Intern</span>
+                            <span class="exp-org">· Google Research</span>
+                            <span class="exp-pill">Current</span>
+                        </div>
+                        <p class="exp-meta">May 2026 – Present · Mountain View, CA</p>
+                        <p class="exp-desc">Working on efficient image tokenization for generative models — compact latent representations that reduce token counts while preserving reconstruction fidelity and downstream generation quality.</p>
+                    </div>
+                </div>
+
+                <div class="exp-card" style="--brand:#FFFC00; --brand-shadow:rgba(255,252,0,0.45);">
+                    <div class="exp-logo dark-icon">
+                        <img src="https://cdn.simpleicons.org/snapchat/000000" alt="Snap Inc. logo">
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <span class="exp-role">Research Intern</span>
+                            <span class="exp-org" style="color:#d4a000">· Snap Inc.</span>
+                        </div>
+                        <p class="exp-meta">May 2025 – Dec 2025 · Palo Alto, CA</p>
+                        <p class="exp-desc">Developed a multi-subject diffusion framework enabling spatially controllable composition from canvas inputs, incorporating vision-language representations for enhanced semantic understanding. Resulted in <a href="https://snap-research.github.io/canvas-to-image/">Canvas-to-Image</a> (SIGGRAPH 2026).</p>
+                    </div>
+                </div>
+
+                <div class="exp-card" style="--brand:#FA0F00; --brand-shadow:rgba(250,15,0,0.32);">
+                    <div class="exp-logo">
+                        <img src="images/logos/adobe.svg" alt="Adobe logo">
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <span class="exp-role">Research Scientist Intern</span>
+                            <span class="exp-org">· Adobe Research</span>
+                        </div>
+                        <p class="exp-meta">May 2024 – Aug 2024 · Seattle, WA</p>
+                        <p class="exp-desc">Developed an inference-time harmonization approach for layered image generators, introducing attention-level blending for layered compositions that interact across layers. Resulted in <a href="#publications">LayerFusion</a> (CVPR Findings 2026).</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="research">
-            <h2><i class="fa-solid fa-brain"></i> &nbsp Research Interests</h2>
+            <h2><i class="fa-solid fa-brain"></i> Research Interests</h2>
             <ul>
                 <li>Multimodal controllable generative models</li>
                 <li>Image and video generation and editing</li>
@@ -66,84 +181,89 @@
         </section>
 
         <section id="publications">
-            <h2><i class="fa-solid fa-magnifying-glass"></i> &nbsp Recent Research</h2>
-            <!--
-            <div class="publication-card" style="background: #FFFFF0">
-                <img src="cover_assets/canvas_cover.png" alt="gantastic">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Recent Research</h2>
+
+            <div class="publication-card featured">
+                <div class="img-wrap"><img src="cover_assets/canvas_cover.png" alt="Canvas-to-Image"></div>
                 <div class="publication-card-content">
                     <h3>Canvas-to-Image: Compositional Image Generation with Multimodal Controls</h3>
-                    <p><strong>Yusuf Dalva</strong>, <a href="https://guochengqian.github.io/">Guocheng Gordon Qian</a>, <a href="https://mayagoldenberg.framer.website/">Maya Goldenberg</a>, <a href="https://tsaishien-chen.github.io/">Tsai-Shien Chen</a>, <a href="https://kfiraberman.github.io/">Kfir Aberman</a>, <a href="https://stulyakov.com/">Sergey Tulyakov</a>, <a href="pinguar.org">Pinar Yanardag</a>, <a href="https://wangkua1.github.io/">Kuan-Chieh Jackson Wang</a></p>
-                    <p><strong>arXiv, 2025</strong></p>
-                    <p><a href="https://arxiv.org/abs/2511.15243">Paper</a>, <a href="https://snap-research.github.io/canvas-to-image/">Project Page</a></p>
+                    <p class="authors"><strong>Yusuf Dalva</strong>, <a href="https://guochengqian.github.io/">Guocheng Gordon Qian</a>, <a href="https://mayagoldenberg.framer.website/">Maya Goldenberg</a>, <a href="https://tsaishien-chen.github.io/">Tsai-Shien Chen</a>, <a href="https://kfiraberman.github.io/">Kfir Aberman</a>, <a href="https://stulyakov.com/">Sergey Tulyakov</a>, <a href="http://pinguar.org">Pinar Yanardag</a>, <a href="https://wangkua1.github.io/">Kuan-Chieh Jackson Wang</a></p>
+                    <p><span class="venue venue-siggraph">SIGGRAPH 2026</span> <span class="venue venue-award">New</span></p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2511.21691"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+                        <a href="https://snap-research.github.io/canvas-to-image/"><i class="fa-solid fa-link"></i> Project Page</a>
+                    </div>
                 </div>
             </div>
-            -->
+
             <div class="publication-card">
-                <img src="cover_assets/lorashop_cover.png" alt="gantastic">
+                <div class="img-wrap"><img src="cover_assets/lorashop_cover.png" alt="LoRAShop"></div>
                 <div class="publication-card-content">
                     <h3>LoRAShop: Training-Free Multi-Concept Image Generation and Editing with Rectified Flow Transformers</h3>
-                    <p><strong>Yusuf Dalva</strong>, <a href="https://yesiltepe-hidir.github.io/">Hidir Yesiltepe</a>, <a href="pinguar.org">Pinar Yanardag</a></p>
-                    <p><strong>NeurIPS 2025 (Spotlight - top 3%)</strong></p>
-                    <p><a href="https://arxiv.org/abs/2505.23758">Paper</a>, <a href="https://lorashop.github.io/">Project Page</a></p>
-                </div>
-            </div>
-
-            <div class="publication-card" style="background: #FFFFF0">
-                <img src="cover_assets/fluxspace_cover.png" alt="fluxspace">
-                <div class="publication-card-content">
-                    <h3>FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers</h3>
-                    <p><strong>Yusuf Dalva</strong>, <a href="https://kavanavenkatesh.github.io/">Kavana Venkatesh</a>, <a href="pinguar.org">Pinar Yanardag</a></p>
-                    <p><strong>CVPR 2025</strong></p>
-                    <p><a href="https://arxiv.org/abs/2412.09611">Paper</a>, <a href="https://fluxspace.github.io/">Project Page</a></p>
+                    <p class="authors"><strong>Yusuf Dalva</strong>, <a href="https://yesiltepe-hidir.github.io/">Hidir Yesiltepe</a>, <a href="http://pinguar.org">Pinar Yanardag</a></p>
+                    <p><span class="venue venue-neurips">NeurIPS 2025</span> <span class="venue venue-award">Spotlight · Top 3%</span></p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2505.23758"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+                        <a href="https://lorashop.github.io/"><i class="fa-solid fa-link"></i> Project Page</a>
+                    </div>
                 </div>
             </div>
 
             <div class="publication-card">
-                <img src="cover_assets/noiseclr_cover.png" alt="noiseclr">
+                <div class="img-wrap"><img src="cover_assets/fluxspace_cover.png" alt="FluxSpace"></div>
                 <div class="publication-card-content">
-                    <h3>NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models</h3>
-                    <p><strong>Yusuf Dalva</strong>, <a href="pinguar.org">Pinar Yanardag</a></p>
-                    <p><strong>CVPR 2024 (Oral - top 0.8%)</strong></p>
-                    <p><a href="https://arxiv.org/abs/2312.05390">Paper</a>, <a href="https://noiseclr.github.io/">Project Page</a></p>
+                    <h3>FluxSpace: Disentangled Semantic Editing in Rectified Flow Transformers</h3>
+                    <p class="authors"><strong>Yusuf Dalva</strong>, <a href="https://kavanavenkatesh.github.io/">Kavana Venkatesh</a>, <a href="http://pinguar.org">Pinar Yanardag</a></p>
+                    <p><span class="venue venue-cvpr">CVPR 2025</span></p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2412.09611"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+                        <a href="https://fluxspace.github.io/"><i class="fa-solid fa-link"></i> Project Page</a>
+                    </div>
                 </div>
             </div>
 
-            <p>For the full list of publications, visit the <a href="publications.html">Publications Page</a> and my <a href="https://scholar.google.com/citations?user=SLtSdMAAAAAJ">Google Scholar</a> profile.</p>
-        </section>
+            <div class="publication-card">
+                <div class="img-wrap"><img src="cover_assets/noiseclr_cover.png" alt="NoiseCLR"></div>
+                <div class="publication-card-content">
+                    <h3>NoiseCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions in Diffusion Models</h3>
+                    <p class="authors"><strong>Yusuf Dalva</strong>, <a href="http://pinguar.org">Pinar Yanardag</a></p>
+                    <p><span class="venue venue-cvpr">CVPR 2024</span> <span class="venue venue-award">Oral · Top 0.8%</span></p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2312.05390"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+                        <a href="https://noiseclr.github.io/"><i class="fa-solid fa-link"></i> Project Page</a>
+                    </div>
+                </div>
+            </div>
 
-        <section id="news" class="news-section">
-            <h2><i class="fa-solid fa-newspaper"></i> &nbsp News & Updates</h2>
-            <div class="news-item">
-                <p><strong>September 2025:</strong> <a href="https://lorashop.github.io/">LoRAShop</a> got accepted to NeurIPS 2025 as a spotlight!</p>
-            </div>
-            <div class="news-item">
-                <p><strong>February 2025:</strong> <a href="https://fluxspace.github.io/">FluxSpace</a> got accepted to CVPR 2025!</p>
-            </div>
-            <div class="news-item">
-                <p><strong>December 2024:</strong> <a href="https://fluxspace.github.io/">FluxSpace</a> and <a href="https://context-canvas.github.io/">Context Canvas</a> now available at arXiv.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>May 2024:</strong> Joined Adobe Research as a Research Scientist Intern.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>May 2024:</strong> <a href="https://gantastic.github.io/">GANTASTIC</a> now available at arXiv.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>February 2024:</strong> <a href="https://noiseclr.github.io/">NoiseCLR</a> got accepted to CVPR 2024 for an oral presentation.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>September 2023:</strong> "Image-to-Image Translation For Face Attribute Editing With Disentangled 
-                    Latent Directions" won <a href="https://w3.cs.bilkent.edu.tr/tr/haberler/ieee-bilgisayar-toplulugu-turkiye-yuksek-lisans-tez-yarismasinda-birincilik/">Best Master Thesis Award</a> 
-                    from IEEE CS Turkey Chapter.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>August 2023:</strong> Started my Ph.D. at Virginia Tech.</p>
-            </div>
+            <p style="color: var(--text-muted); font-size: 14px;">For the full list of publications, visit the <a href="publications.html">Publications page</a> and my <a href="https://scholar.google.com/citations?user=SLtSdMAAAAAJ">Google Scholar</a> profile.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Yusuf Dalva. All rights reserved.</p>
+        <p>&copy; 2026 Yusuf Dalva</p>
     </footer>
+
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        (function () {
+            const targets = document.querySelectorAll('section, .exp-card, .publication-card, .news-item');
+            targets.forEach(el => el.classList.add('reveal'));
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            targets.forEach(el => io.observe(el));
+        })();
+    </script>
 </body>
 </html>
