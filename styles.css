@@ -367,6 +367,43 @@ section ul li {
 }
 
 /* =========================================================
+   Interest tags
+   ========================================================= */
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.interest-tags .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 5px 12px;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+}
+
+.interest-tags .tag::before {
+    content: '#';
+    color: var(--accent);
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.interest-tags .tag:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+/* =========================================================
    Experience cards (with brand logos)
    ========================================================= */
 .exp-grid {
@@ -510,43 +547,103 @@ section ul li {
 }
 
 /* =========================================================
-   News feed
+   News feed (lightweight changelog, scrollable)
    ========================================================= */
+.news-scroll {
+    position: relative;
+}
+
 .news-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    border-top: 1px solid var(--border);
+    max-height: 340px;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
 }
+
+.news-list::-webkit-scrollbar { width: 6px; }
+.news-list::-webkit-scrollbar-track { background: transparent; }
+.news-list::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 3px;
+}
+.news-list::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.news-scroll::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 14px;
+    bottom: 0;
+    height: 44px;
+    background: linear-gradient(to bottom, transparent, var(--bg) 90%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 200ms ease;
+}
+
+.news-scroll.at-bottom::after { opacity: 0; }
 
 .news-item {
     display: flex;
-    gap: 16px;
-    padding: 12px 14px;
-    border-radius: var(--radius-md);
-    transition: background-color var(--transition);
+    gap: 18px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
 }
 
-.news-item:hover {
-    background: var(--surface-2);
-}
+.news-item:last-child { border-bottom: none; }
 
 .news-date {
     flex-shrink: 0;
-    width: 110px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent);
+    width: 88px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-subtle);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding-top: 3px;
+    letter-spacing: 0.05em;
 }
 
 .news-text {
     flex: 1;
     color: var(--text);
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.55;
     margin: 0;
+}
+
+.news-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-subtle);
+    font-style: italic;
+    transition: opacity 200ms ease;
+}
+
+.news-hint .chev-anim {
+    display: inline-block;
+    animation: bounce-down 1.6s ease-in-out infinite;
+}
+
+.news-scroll.at-bottom + .news-hint {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes bounce-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news-hint .chev-anim { animation: none; }
 }
 
 /* =========================================================
